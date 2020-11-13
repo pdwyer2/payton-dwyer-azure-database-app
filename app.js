@@ -1,6 +1,10 @@
 const appInsights = require('applicationinsights');
 appInsights.setup('<instrumentation_key>').start();
 
+app.set('port', process.env.PORT || 5000);
+
+console.log("+++++++++++++++"+ app.get('port'));
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');

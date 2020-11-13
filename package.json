@@ -6,6 +6,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "applicationinsights": "^1.8.8",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
@@ -14,5 +15,7 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1"
   },
-  "engines": { "node": "8.9.4" }
+  "engines": {
+    "node": "8.9.4"
+  }
 }

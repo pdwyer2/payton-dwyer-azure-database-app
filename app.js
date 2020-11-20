@@ -1,15 +1,10 @@
-const appInsights = require('applicationinsights');
-appInsights.setup('<instrumentation_key>').start();
-
-app.set('port', process.env.PORT || 5000);
-
-console.log("+++++++++++++++"+ app.get('port'));
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var debug = require('debug')('app4')
+
+//var cookieParser = require('cookie-parser');
+//var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var inventoryRouter = require('./routes/inventory');
@@ -20,10 +15,10 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+//app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -45,4 +40,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+app.set('port', process.env.PORT || 3000)
+
+var server = app.listen(app.get('port'), function () {
+  debug('Express server listening on port ' + server.address().port)
+})
+//module.exports = app;

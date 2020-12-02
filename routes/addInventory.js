@@ -3,7 +3,10 @@ var router = express.Router();
 var db=require('../database');
 
 /* GET users listing. */
-router.get('/inventory-add');
+router.get('/inventory-add', function(req, res, next) {
+    res.render('inventory-add', { title: 'Add Inventory'});
+});
+  
 router.post('/', function(req, res, next) {
     var createItem = {
         partID: req.body.partID,

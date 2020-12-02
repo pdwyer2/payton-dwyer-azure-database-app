@@ -6,6 +6,8 @@ var debug = require('debug')('app4')
 var indexRouter = require('./routes/index');
 var inventoryRouter = require('./routes/inventory');
 var addInventoryRouter = require('./routes/addInventory');
+var editInventoryRouter = require('./routes/part');
+var delteInventoryRouter = require('./routes/delete')
 
 var app = express();
 
@@ -20,6 +22,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/inventory', inventoryRouter);
 app.use('/addInventory', addInventoryRouter);
+app.use('/part', editInventoryRouter);
+app.use('/delete', delteInventoryRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,3 +48,7 @@ var server = app.listen(app.get('port'), function () {
   debug('Express server listening on port ' + server.address().port)
 })
 //module.exports = app;
+
+//For viewing locally:
+//npm start
+//http://localhost:3000 in browser

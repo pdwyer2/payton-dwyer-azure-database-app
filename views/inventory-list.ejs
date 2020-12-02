@@ -8,12 +8,9 @@
 <h2>Display Data using Node.js & MySQL</h2>
     <table border="1">
         <tr>
-            <th>S.N</th>
             <th>Part ID</th>
             <th>Part Name</th>
             <th>Price</th>
-            <th>Edit</th>
-            <th>Delete</th>
         </tr>
         
         <%
@@ -21,13 +18,11 @@
         var i=1;
         userData.forEach(function(data){
         %>
+
         <tr>
-            <td><%=i; %></td>
             <td><%=data.partID %></td>
             <td><%=data.partName %></td>
             <td><%=data.price %></td>
-            <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
-            <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
@@ -38,7 +33,16 @@
     </table>
     </div>
     <form action="..">
-        <input type="submit" value="Move backwards in database" />
-      </form>
+    <input type="submit" value="Move backwards in database" />
+    </form>
+    <form action="/part/inventory-edit">
+    <input type="submit" value="Update Inventory Item" />
+    </form>
+    <form action="/delete/inventory-delete">
+    <input type="submit" value="Delete Inventory Item" />
+    </form>
+    <form action="/addInventory/inventory-add">
+    <input type="submit" value="Add item to Inventory" />
+    </form>
 </body>
 </html>

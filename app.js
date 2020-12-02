@@ -5,6 +5,7 @@ var debug = require('debug')('app4')
 
 var indexRouter = require('./routes/index');
 var inventoryRouter = require('./routes/inventory');
+var addInventoryRouter = require('./routes/addInventory');
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/inventory', inventoryRouter);
+app.use('/addInventory', addInventoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

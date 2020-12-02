@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
     }
   db.query('INSERT INTO inventory SET ?', createItem, function (err, data, fields) {
   if (err) throw err;
-  res.send('Saved succesfully');
+  res.render('index', { title: 'CompConfig' });
 });
 });
 

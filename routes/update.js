@@ -2,11 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db=require('../database');
 
-router.get('/inventory-edit', function(req, res, next) {
-    res.render('inventory-edit', { title: 'Edit Inventory'});
-});
-
-router.post('/', function(req,res) {
+ router.post('/', function(req,res) {
     var updateItem = {
         partID: req.body.partID,
         partName: req.body.partName,

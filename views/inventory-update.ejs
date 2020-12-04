@@ -5,9 +5,9 @@
   </head>
   <body>
     <h1>Edit Part</h1>
-    <form action="/part" method="POST">
+    <form action="/update" method="POST">
         Part ID: <br>
-        <input type="text" name="partID"><br>
+        <input type="text" name="partID" value="<%=currentpartID %>"><br>
         Part Name: <br>
         <input type="text" name="partName"><br>
         Part Price: <br>

@@ -4,9 +4,9 @@ var path = require('path');
 var debug = require('debug')('app4')
 
 var indexRouter = require('./routes/index');
-var inventoryRouter = require('./routes/inventory');
-var addInventoryRouter = require('./routes/addInventory');
-var editInventoryRouter = require('./routes/part');
+var inventoryRouter = require('./routes/read');
+var addInventoryRouter = require('./routes/add');
+var editInventoryRouter = require('./routes/update');
 var delteInventoryRouter = require('./routes/delete')
 
 var app = express();
@@ -20,9 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/inventory', inventoryRouter);
-app.use('/addInventory', addInventoryRouter);
-app.use('/part', editInventoryRouter);
+app.use('/read', inventoryRouter);
+app.use('/add', addInventoryRouter);
+app.use('/update', editInventoryRouter);
 app.use('/delete', delteInventoryRouter);
 
 

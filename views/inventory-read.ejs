@@ -23,6 +23,16 @@
             <td><%=data.partID %></td>
             <td><%=data.partName %></td>
             <td><%=data.price %></td>
+            <td><form action="/read" method="POST">
+                <input type="hidden" name ="partID" value ="<%=data.partID %>"/>
+                <input type="submit" value="Update" />
+                </form>
+            </td>
+            <td><form action="/delete" method="POST">
+                <input type="hidden" name ="partID" value ="<%=data.partID %>" />
+                <input type="submit" value="Delete" />
+                </form>
+            </td>
         </tr>
         <%  i++; }) %>
         <% } else{ %>
@@ -33,15 +43,9 @@
     </table>
     </div>
     <form action="..">
-    <input type="submit" value="Move backwards in database" />
+    <input type="submit" value="Move to Home Screen" />
     </form>
-    <form action="/part/inventory-edit">
-    <input type="submit" value="Update Inventory Item" />
-    </form>
-    <form action="/delete/inventory-delete">
-    <input type="submit" value="Delete Inventory Item" />
-    </form>
-    <form action="/addInventory/inventory-add">
+    <form action="/add/inventory-add">
     <input type="submit" value="Add item to Inventory" />
     </form>
 </body>

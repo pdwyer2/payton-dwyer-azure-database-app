@@ -14,7 +14,7 @@ router.get('/inventory-read', function(req, res, next) {
 //handles update button per inventory item
 //sends the partID of the selected item to the inventory-update view
 router.post('/', function(req, res, next) {
-  res.render('inventory-update', { currentpartID: req.body.partID});
+  res.render('inventory-update', { currentpartID: req.body.partID, currentpartName: req.body.partName, currentpartPrice: req.body.price});
 });
 
 module.exports = router;

@@ -11,6 +11,8 @@
             <th>Part ID</th>
             <th>Part Name</th>
             <th>Price</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         
         <%
@@ -24,7 +26,9 @@
             <td><%=data.partName %></td>
             <td><%=data.price %></td>
             <td><form action="/read" method="POST">
-                <input type="hidden" name ="partID" value ="<%=data.partID %>"/>
+                <input type="hidden" name="partID" value ="<%=data.partID %>"/>
+                <input type="hidden" name="partName" value ="<%=data.partName %>"/>
+                <input type="hidden" name="price" value ="<%=data.price %>"/>
                 <input type="submit" value="Update" />
                 </form>
             </td>
@@ -47,6 +51,9 @@
     </form>
     <form action="/add/inventory-add">
     <input type="submit" value="Add item to Inventory" />
+    </form>
+    <form action="/search/inventory-search">
+    <input type="submit" value="Search current Inventory" />
     </form>
 </body>
 </html>

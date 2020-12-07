@@ -7,7 +7,8 @@ var indexRouter = require('./routes/index');
 var inventoryRouter = require('./routes/read');
 var addInventoryRouter = require('./routes/add');
 var editInventoryRouter = require('./routes/update');
-var delteInventoryRouter = require('./routes/delete')
+var deleteInventoryRouter = require('./routes/delete')
+var searchInventoryRouter = require('./routes/search');
 
 var app = express();
 
@@ -23,7 +24,8 @@ app.use('/', indexRouter);
 app.use('/read', inventoryRouter);
 app.use('/add', addInventoryRouter);
 app.use('/update', editInventoryRouter);
-app.use('/delete', delteInventoryRouter);
+app.use('/delete', deleteInventoryRouter);
+app.use('/search', searchInventoryRouter);
 
 
 // catch 404 and forward to error handler

@@ -42,7 +42,7 @@
         <td><%=data.price %></td>
         <td><%=data.partType %></td>
         <td><%=data.currentStock %></td>
-        <td><form action="/read" method="POST">
+        <td><form action="/read" name="Update" method="POST">
             <input type="hidden" name="partID" value ="<%=data.partID %>"/>
             <input type="hidden" name="partName" value ="<%=data.partName %>"/>
             <input type="hidden" name="price" value ="<%=data.price %>"/>
@@ -51,7 +51,7 @@
             <input class="option-Btn" type="submit" value="Update" />
             </form>
         </td>
-        <td><form action="/delete" method="POST">
+        <td><form action="/delete" name="Delete" method="POST">
             <input type="hidden" name ="partID" value ="<%=data.partID %>" />
             <input class="option-Btn" type="submit" value="Delete" />
             </form>

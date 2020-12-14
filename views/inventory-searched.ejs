@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Fetch using MySQL and Node.js</title>
+  <title>Search Result</title>
   <link href="/stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
     <div id="main-container">
-<h2 id="compConfig">Comp Config</h2>
-<div id="sort-form">
-<form action="/sort" method="POST">
-    <label for="sortPrice">Sort By: </label>
-    <select class="dropdown" name="sortPrice">
-      <option></option>
-      <option value="priceHiLo">Price Highest First</option>
-      <option value="priceLoHi">Price Lowest First</option>
-    </select>
-    <input class="option-Btn" type="submit" value="Sort">
-  </form>
-</div>
+<h2 id="compConfig">Search Result</h2>
   <div id="table-container">
 <table id="inventory-table" border="1">
     <tr>
@@ -66,14 +55,11 @@
         </tr>
     <% } %>
 </table>
-</div>
 <div id="options-container">
-    <form action="/add/inventory-add">
-    <input class="option-Btn" type="submit" value="Add item to Inventory" />
-    </form>
-    <form action="/search/inventory-search">
-    <input class="option-Btn" type="submit" value="Search current Inventory" />
-    </form>
+<form action="..">
+    <input class="option-Btn" type="submit" value="Home" />
+</form>
+</div>
 </div>
 </div>
 

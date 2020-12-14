@@ -11,12 +11,15 @@ router.post('/', function(req, res, next) {
     var createItem = {
         partID: req.body.partID,
         partName: req.body.partName,
-        price: req.body.price
+        price: req.body.price,
+        partType: req.body.partType,
+        currentStock: req.body.currentStock
     }
     db.query('INSERT INTO inventory SET ?', createItem, function (err, data, fields) {
         if (err) throw err;
-        res.render('index', { title: 'CompConfig' });
+        res.render('index', { title: 'Inventory', userData: data});
     });
 });
+
 
 module.exports = router;

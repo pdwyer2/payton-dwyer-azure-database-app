@@ -2,25 +2,26 @@
 <html>
   <head>
     <title>Seach for Parts</title>
+    <link href="/stylesheets/search.css" rel="stylesheet">
   </head>
   <body>
+    <div id="main-container">
     <h1>Search Parts</h1>
     <div>
         <form action="/search" method="POST">
             <label for="choice">Choose search parameter:</label>
-            <select id="choice" name="choice">
-              <option value="ID">Part ID</option>
-              <option value="Name">Part Name</option>
-              <option value="Price">Part Price</option>
+            <select class="choice" name="choice">
+              <option value="partID">Part ID</option>
+              <option value="partName">Part Name</option>
+              <option value="priceAbove">Parts Priced Above ... </option>
+              <option value="priceBelow">Parts Priced Below ... </option>
             </select>
                 <form>
-                    <input type="text" name="data">
-                    <input type="submit" value="Search">
+                    <input type="text" name="param">
+                    <input class="option-Btn" type="submit" value="Search">
                 </form>
           </form>
     </div>
-    <script>
-
-    </script>
+    </div>
   </body>
 </html>

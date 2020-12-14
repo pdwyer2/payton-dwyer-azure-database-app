@@ -9,6 +9,7 @@ var addInventoryRouter = require('./routes/add');
 var editInventoryRouter = require('./routes/update');
 var deleteInventoryRouter = require('./routes/delete')
 var searchInventoryRouter = require('./routes/search');
+var sortInventoryRouter = require('./routes/sort');
 
 var app = express();
 
@@ -19,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
+
 
 app.use('/', indexRouter);
 app.use('/read', inventoryRouter);
@@ -26,7 +29,7 @@ app.use('/add', addInventoryRouter);
 app.use('/update', editInventoryRouter);
 app.use('/delete', deleteInventoryRouter);
 app.use('/search', searchInventoryRouter);
-
+app.use('/sort', sortInventoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

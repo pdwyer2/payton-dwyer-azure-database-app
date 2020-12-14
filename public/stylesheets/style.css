@@ -3,6 +3,79 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#compConfig {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 8px;
+  text-align: center;
+
+}
+
+#inventory-table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#inventory-table td, #inventory-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#inventory-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#inventory-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#inventory-table tr:hover {background-color: #ddd;}
+
+#sort-form {
+  text-align: center;
+  background-color: #f2f2f2;
+  font: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px;
+}
+
+#main-container {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
+#options-container {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  text-align: center;
+}
+
+
+#options-container form {
+  text-align: center;
+  padding: 8px;
+  display: inline-block;
+}
+
+.option-Btn {
+  border-radius: 20px;
+  background-color: #4CAF50;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 10px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+}
+
+.option-Btn:hover {background-color: #3e8e41}
+
+.option-Btn:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
 }

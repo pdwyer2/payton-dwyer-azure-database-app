@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Add to Database</title>
+    <link href="/stylesheets/add-update.css" rel="stylesheet">
   </head>
   <body>
+    <div id="main-container">
     <h1>Add to Database</h1>
     <form action="/add" method="POST">
         Part ID: <br>
@@ -11,8 +13,13 @@
         Part Name: <br>
         <input type="text" name="partName"><br>
         Part Price: <br>
-        <input type="text" name="price"><br><br>
-        <input type="submit" value="Add">
-  </form>
+        <input type="text" name="price"><br>
+        Type: <br>
+        <input type="text" name="partType"><br>
+        Quantity: <br>
+        <input type="text" name="currentStock"><br><br>
+        <input class="option-Btn" type="submit" value="Add">
+    </form>
+  </div>
   </body>
 </html>

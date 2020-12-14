@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Edit Part</title>
+    <title>Update Part</title>
+    <link href="/stylesheets/add-update.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Edit Part</h1>
+    <div id="main-container">
+    <h1>Update Part</h1>
     <form action="/update" method="POST">
         Part ID: <br>
-        <input type="text" name="partID" value="<%=currentpartID %>" readonly><br>
+        <input style="background-color: #ddd;" type="text" name="partID" value="<%=currentpartID %>" readonly><br>
         Part Name: <br>
         <input type="text" name="partName" value="<%=currentpartName %>"><br>
         Part Price: <br>
-        <input type="text" name="price" value="<%=currentpartPrice %>"><br><br>
-        <input type="submit" value="Update">
+        <input type="text" name="price" value="<%=currentpartPrice %>"><br>
+        Type: <br>
+        <input type="text" name="partType" value="<%=currentpartType %>"><br>
+        Quantity: <br>
+        <input type="text" name="currentStock" value="<%=currentpartStock %>"><br><br>
+        <input class="option-Btn" type="submit" value="Update">
   </form>
+  </div>
   </body>
 </html>

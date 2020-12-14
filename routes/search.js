@@ -11,8 +11,6 @@ router.post('/', function(req,res) {
 
     var userchoice = req.body.choice;
     
-    console.log("User chose to search from: " + userchoice);
-    console.log("User chose to search for: " + searchItem);
 
     if(userchoice == "partID"){
         var searchItem = req.body.param;
@@ -43,6 +41,12 @@ router.post('/', function(req,res) {
             res.render('inventory-searched', { title: 'Inventory Searched', userData: data});
         });
 
+    }if (userchoice == "partType"){
+        var searchItem = req.body.param;
+        db.query("SELECT * FROM inventory WHERE partType = ?", searchItem, function (err, data, fields) {
+            if (err) throw err;
+            res.render('inventory-searched', { title: 'Inventory Searched', userData: data});
+        });
     }else{
         console.log("User choice could not be determined: " + userchoice)
     }
